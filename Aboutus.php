@@ -1,3 +1,30 @@
+<?php 
+$servername = "localhost";
+  $susername = "root";
+  $spassword = "sust";
+  $dbname = "csesociety";
+  $conn = new mysqli($servername, $susername, $spassword, $dbname);
+  if ($conn->connect_error) {
+       die("Connection failed: " . $conn->connect_error);  
+  }
+
+
+// $id = $_GET["id"];
+$sql = "SELECT * FROM aboutus";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      $description = $row["description"];
+      $id = $row["id"];
+      // $cgpa = $row["cgpa"];
+    }
+  } else {
+    echo "0 results";
+  }
+  $conn->close();
+?>
+
 <!Doctype html>
 <html>
 <head>
@@ -60,7 +87,7 @@
                     CSE Society is a non-political departmental organization.<br>All the students and teachers of CSE department are the general member of this society.
                 </h4>
                 <p class="text-center wow fadeInDown">
-                    Shahjalal University Of Science And Technology is one of the most prominent Universities of Bangladesh. Among many departments of SUST, CSE is considered to be the most known and famous department. In Bangladesh SUST CSE is one of the very best and academically vibrant CSE departments. CSE society is an organization dedicated to every member of SUST CSE family. All faculty members and students are by default member of this organization. This organization mainly works for the excellence of academic, extra curricular, and recreational needs of all its members. CSE Society, SUST offers various kinds of skill development and carrier oriented workshops for the students. It also arranges a national tour every year. CSE Society believes that academic progress and recreational activities should go hand in hand. Thats why along with national tour it also arranges indoor games or other cultural activities for the students. One of another great activities of CSE society is arranging a CSE carnival every year. Students form all over the country participate in this vibrant and luminous carnival. Thus CSE society of SUST is glowing more and more every year as a organization which should be considered as an techno Role model in the country.</p>
+                    <?php echo $description; ?> </p>
             </div>
         </div><!--/.container-->
     </section>

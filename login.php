@@ -1,4 +1,11 @@
-
+<?php
+session_start();
+if(isset($_SESSION['myusername']) ){
+    // header('location:admin_login.html');
+    header('location:dashboard.php');
+}
+    //echo "<center> Welcome ". $_SESSION['myusername'] . "</center>" ;
+?>
 <!Doctype html>
 <html>
 <meta charset="utf-8">

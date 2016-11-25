@@ -34,7 +34,7 @@ if(!isset($_SESSION['myusername']) ){
 			                </div>
 			            </div>
 			        </div>
-				 	<form class="form-horizontal" action="gg.php" method="POST">
+				 	<form class="form-horizontal" action="gg.php" method="POST" enctype="multipart/form-data">
 						<fieldset>
 					        <div class="form-group">
 					            <label for="name" class="control-label col-lg-2" class="col-xs-2">Name*:</label>
@@ -80,7 +80,7 @@ if(!isset($_SESSION['myusername']) ){
 					        <div class="form-group">
 					            <label for="File" class="control-label col-lg-2" class="col-xs-2">File*</label>
 					            <div class="col-lg-6"> 
-					            	<input class="form-control" name="image"  type="file">
+					            	<input class="form-control" name="fileToUpload"  type="file">
 					        	</div>
 					        </div>
 
