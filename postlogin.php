@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
   $susername = "root";
-  $spassword = "";
+  $spassword = "sust";
   $dbname = "csesociety";
   $conn = new mysqli($servername, $susername, $spassword, $dbname);
   if ($conn->connect_error) {
@@ -30,7 +30,7 @@ if($count>0) {
 session_start();
 $_SESSION['myusername'] = $myusername;
 $_SESSION['mypassword'] = $mypassword;
-header("location:admin_commitee.php");
+header("location:dashboard.php");
 }
 else {
 echo "Wrong Username or Password";
